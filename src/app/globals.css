@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-hue-red: #8B4513;
+  --color-hue-gold: #D4AF37;
+  --color-hue-gold-light: #E8CA6B;
+  --color-hue-red-dark: #802020;
+  
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-playfair);
+}
+
+:root {
+  --bg-primary: #ffffff;
+  --text-primary: #1e1e24;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-primary: #0f0f13;
+    --text-primary: #f5f5f5;
+  }
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans), sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif), serif;
+}
+
+/* Glassmorphism */
+.glass {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+.dark .glass {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.6);
+}
+
+.glass-input {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  transition: all 0.3s ease;
+}
+.glass-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+.glass-input:focus {
+  outline: none;
+  border-color: var(--color-hue-gold);
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2);
+}
+
+.dark .glass-input {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+.dark .glass-input:focus {
+  background: rgba(0, 0, 0, 0.5);
+}
